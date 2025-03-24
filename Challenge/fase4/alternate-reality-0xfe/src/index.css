@@ -1,0 +1,18 @@
+/* Reset margins and set basic font styles */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  background-color: #001f3f;
+  /* Example: a simple linear gradient that gives an arcade feel */
+  background-image: linear-gradient(45deg, #001f3f 25%, #000 75%);
+  background-size: cover;
+}
+
+/* Optional: smooth transition for background changes */
+* {
+  transition: all 0.3s ease;
+}
