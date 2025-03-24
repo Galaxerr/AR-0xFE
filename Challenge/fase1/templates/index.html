@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Monke Lives</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body:before {
+      content: "";
+      background: url("/images?filename=background.jpg") no-repeat center center fixed; /* Not as good as Giordano, but it's still something */
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      filter: blur(10px);
+      z-index: -1;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 60%;
+      height: 200px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .fact {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+      font-size: large;
+    }
+
+    .fact.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .fact.exiting {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <h1>The Monke Lives</h1>
+    <div class="fact active">Did you know that the Monke is one of the most fascinating creatures on Earth?</div>
+    <div class="fact">Many species of Monke inhabit tropical forests, mountains, and even urban areas.</div>
+    <div class="fact">Some Monke are highly social, living in large groups and using vocalizations to communicate.</div>
+    <div class="fact">Monke have been observed using tools, solving problems, and even exhibiting a sense of humor.</div>
+    <div class="fact">The diet of a Monke varies from fruits and nuts to insects and small animals.</div>
+    <div class="fact">Conservation efforts are vital to protect the habitats of these amazing Monke.</div>
+  </div>
+
+  <script>
+    /* We love some JavaScript */
+    document.addEventListener('DOMContentLoaded', function() {
+      let facts = document.querySelectorAll(".fact");
+      let index = 0;
+
+      function showNextFact() {
+        let currentFact = facts[index];
+        currentFact.classList.remove("active");
+        currentFact.classList.add("exiting");
+
+        index = (index + 1) % facts.length;
+        let nextFact = facts[index];
+
+        setTimeout(() => {
+          currentFact.classList.remove("exiting");
+          nextFact.classList.add("active");
+        }, 1000);
+      }
+
+      setInterval(showNextFact, 5000);
+    });
+  </script>
+</body>
+</html>

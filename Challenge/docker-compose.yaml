@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  fase1:
+    build: ./fase1
+    ports:
+      - "42055:42055"
+    environment:
+      - FLASK_ENV=development
+
+  fase3:
+    build: ./fase3
+    ports:
+      - "42011:42011"
+
+  fase4:
+    build:
+      context: ./fase4
+    ports:
+      - "42069:42069"
+    stdin_open: true
+    tty: true
