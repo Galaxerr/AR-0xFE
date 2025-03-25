@@ -7,9 +7,8 @@ navigare indietro di cartelle fino a trovare il file flag.txt.
 
 filename=../../../../../../flag.txt
 
-2. Questa volta, il video non da un link classico, ma uno di google drive. Ascoltando bene il video si capisce che
-è stato nascosto qualcosa nell'audio che il video utilizza, per cui bisogna scaricare il file audio del video (che avrei voluto fare
-con un sito "youtube to mp3" ma ho visto che non funziona) che è possibile tramite il link in descrizione.
+2. Questa volta, la descriione non dà nessuna informazione utile, mentre l'audio del video si nota essere diverso dal normale, per cui
+la flag sarà contenuta all'interno di questo. L'audio è fornito negli attachments (perché usare un sito "youtube to mp3" non funzionava).
 Una volta ottenuto il file audio, lo si può mettere su audacity e visualizzarne lo spettrogramma per rivelare
 una password, necessaria ad ottenere la flag: ciaomamma123.
 A questo punto, bisogna estrarre la flag dall'audio, facendo una semplice estrazione di file da cyberchef
