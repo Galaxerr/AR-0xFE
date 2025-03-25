@@ -120,13 +120,15 @@ def play_normal_mode():
 def play_secret_mode():
     board = ["-"] * 9
     print("\nSecret Mode Activated!")
-    symbol = input("Choose a symbol to fill the board (X or O): ").upper().strip()
+    symbol = input("Choose your symbol (X or O): ").upper().strip()
     while symbol not in ("X", "O"):
         symbol = input("Invalid input. Please choose X or O: ").upper().strip()
+    
+    print("Player1 is " +  symbol + ", Player2 is " + ("O" if symbol == "X" else "X"))
     display_board(board)
     
     while True:
-        moves = input("Enter cell numbers (or type 'exit' to quit): ").strip()
+        moves = input("Player " + symbol + ", enter cell numbers (or type 'exit' to quit): ").strip()
         if moves.lower() == "exit":
             print("Exiting secret mode.")
             break
@@ -148,6 +150,11 @@ def play_secret_mode():
             except Exception as e:
                 print("Error reading flag.")
             break
+        elif all(cell != "-" for cell in board):
+            print("Well... Now what?")
+            break
+
+        symbol = "X" if symbol == "O" else "O"
 
 def main():
     print(f"This wasn't how I imagined hell to be... oh well, at least we can play something!\n")
