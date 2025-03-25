@@ -11,3 +11,8 @@ May luck be on your side.
 (attachment is for the second phase, do not worry right now)
 
 Author: @Galaxer
+
+> Hint1: I don't think you need one for this. cost: 0
+> Hint2: Not everything is visible, you may want to check for other hidden elements in the file.  cost: 100
+> Hint3: Your objective is to fill the whole board with one symbol. cost: 100
+> Hint4: 00:12 - 00:13, 00:36 - 00:37, 00:00 - 00:01. cost: 150
